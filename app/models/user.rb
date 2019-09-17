@@ -1,9 +1,26 @@
 class User < ApplicationRecord
-  has_and_belongs_to_many :communities
+  #has_and_belongs_to_many :communities
   has_many :posts
-  has_one_attached :picture
-  # Include default devise modules. Others available are:
+  has_one_attached :image
+    # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  validates :first_name, length: { maximum: 20 },
+            format: { with: /\A[a-zA-Z]+\z/, message: "only includes charcaters " },
+            uniqueness: { case_sensitive: false }
+
+  validates :last_name, length: { maximum: 20 },
+            format: { with: /\A[a-zA-Z]+\z/, message: "only includes charcaters " },
+            uniqueness: { case_sensitive: false }
+
+  validates_format_of :mobile_no,length: { minimum: 10 }, :with =>  /\d[0-9]\)*\z/ ,
+     message: "Invalid "
+
+
+
+  #validates :password_confirmation, :presence =>true
+  #validates_confirmation_of :password
+
 end

@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2019_09_16_131733) do
   create_table "approvals", force: :cascade do |t|
     t.integer "community_id"
     t.integer "user_id"
-    t.integer "status"
+    t.integer "status", default: 0
     t.date "approval_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2019_09_16_131733) do
     t.datetime "remember_created_at"
     t.string "first_name"
     t.string "last_name"
-    t.string "phone"
+    t.string "mobile_no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

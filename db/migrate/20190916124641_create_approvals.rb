@@ -3,7 +3,7 @@ class CreateApprovals < ActiveRecord::Migration[6.0]
     create_table :approvals do |t|
       t.integer :community_id
       t.integer :user_id
-      t.integer :status
+      t.integer :status, default: 0
       t.date :approval_date
 
       t.timestamps
