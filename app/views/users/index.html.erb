@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Email</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Mobile Number<th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.mobile_no %></td>
+       <td><%= link_to 'Destroy', user_path(user), method: :delete,
+       data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<%= link_to 'Back', new_user_path %>
+</br>

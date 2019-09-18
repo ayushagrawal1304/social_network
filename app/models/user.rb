@@ -8,12 +8,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates :first_name, length: { maximum: 20 },
-            format: { with: /\A[a-zA-Z]+\z/, message: "only includes charcaters " },
-            uniqueness: { case_sensitive: false }
+            format: { with: /\A[a-zA-Z]+\z/, message: "only includes charcaters " }
 
   validates :last_name, length: { maximum: 20 },
-            format: { with: /\A[a-zA-Z]+\z/, message: "only includes charcaters " },
-            uniqueness: { case_sensitive: false }
+            format: { with: /\A[a-zA-Z]+\z/, message: "only includes charcaters " }
 
   validates_format_of :mobile_no,length: { minimum: 10 }, :with =>  /\d[0-9]\)*\z/ ,
      message: "Invalid "
