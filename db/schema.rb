@@ -57,7 +57,8 @@ ActiveRecord::Schema.define(version: 2019_09_24_115023) do
   create_table "communities", force: :cascade do |t|
     t.string "email"
     t.string "name"
-    t.date "date_of_creation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "likes", force: :cascade do |t|
