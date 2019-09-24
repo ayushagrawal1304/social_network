@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  #has_and_belongs_to_many :communities
+  has_and_belongs_to_many :communities
   has_many :posts
   has_one_attached :image
     # Include default devise modules. Others available are:

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   namespace :users do
     resources :dashboards, only: :index
   end
+
 end
