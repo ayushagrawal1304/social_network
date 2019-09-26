@@ -6,8 +6,8 @@ Rails.application.routes.draw do
                                     sessions: 'users/sessions', passwords: 'users/passwords', communities: 'users/communities' } 
   
   namespace :users do
-    resources :dashboards, only: :index
-    resources :communities 
+    resources :dashboards, only: :index   
+    resources :communities
   end
 
 
