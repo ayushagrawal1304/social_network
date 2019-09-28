@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates_format_of :mobile_no,length: { minimum: 10 }, :with =>  /\d[0-9]\)*\z/ ,
      message: "Invalid "
 
-
+  scope :invite_users, -> (user_id){ where.not(id: user_id) }
 
   #validates :password_confirmation, :presence =>true
   #validates_confirmation_of :password

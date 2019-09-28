@@ -4,4 +4,7 @@ class Users::DashboardsController < ApplicationController
   def index
     @community=Community.where("user_id="+current_user.id.to_s)
   end
+
+  
+
 end

@@ -6,8 +6,10 @@ Rails.application.routes.draw do
                                     sessions: 'users/sessions', passwords: 'users/passwords', communities: 'users/communities' } 
   
   namespace :users do
-    resources :dashboards, only: :index   
-    resources :communities
+    resources :dashboards   
+    resources :communities do
+      post '/invite', to: 'communities#invite_user'
+    end
   end
 
 
