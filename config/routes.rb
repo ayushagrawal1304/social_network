@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   
   namespace :users do
     resources :dashboards   
-    resources :communities do
-      post '/invite', to: 'communities#invite_user'
+    resources :communities
+    
+    namespace :communities do
+      resources :invitations
     end
   end
 

@@ -1,3 +1,3 @@
 class Approval < ApplicationRecord
-  belongs_to :communities
+  belongs_to :community
 end
