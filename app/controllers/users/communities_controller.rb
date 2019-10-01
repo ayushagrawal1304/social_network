@@ -17,7 +17,10 @@ class Users::CommunitiesController < ApplicationController
   end
 
   def invite_user
-   
+    @community = Community.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -25,7 +28,4 @@ class Users::CommunitiesController < ApplicationController
     params.require(:community).permit(:name)
   end
 
-  def approval_params
-    params.permit(:user_id, :id)
-  end
 end

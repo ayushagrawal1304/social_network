@@ -6,12 +6,10 @@
 
 <div class="container">
   <div class="sign_up">
-		<%= form_with model: @approval, url: users_communities_invitations_path do |f| %>
-
+		<%= form_with model: @approval, url: users_invitations_path(community_id: @community.id) do |f| %>
 			<div class="form-group">
 			   <br> <%= select_tag(:user_id, options_for_select(invite_user_options), { class: 'form-control'}) %></br>
 			</div>
-			<%= f.hidden_field :community_id, value: @community.id %>
 
 			<div class="actions">
 			  	<br><%= f.submit "Invite", class: "btn btn-primary"%></br>
