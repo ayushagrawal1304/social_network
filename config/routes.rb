@@ -7,12 +7,19 @@ Rails.application.routes.draw do
   
   namespace :users do
     resources :dashboards   
-    resources :communities
-    
-    namespace :communities do
-      resources :invitations
-    end
-  end
 
+    resources :communities do
+      member do
+        get "invite_user"
+      end
+    end
+
+    resources :invitations do
+      member do
+        put "accept"
+      end
+    end
+
+  end
 
 end
